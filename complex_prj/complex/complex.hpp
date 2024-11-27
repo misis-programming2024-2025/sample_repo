@@ -11,6 +11,7 @@ struct Complex {
 	Complex() = default;
 	explicit Complex(const double re);
 	Complex(const double re, const double im);
+	Complex(const Complex& other);
 	~Complex() = default;
 
 	Complex& operator+=(const Complex& rhs);
@@ -24,7 +25,7 @@ struct Complex {
 	Complex& operator/=(double rhs);
 
     std::ostream& writeTo(std::ostream& ostrm) const;
-    std::ostream& readFrom(std::istream& istrm);
+    std::istream& readFrom(std::istream& istrm);
 
 	double re{ 0.0 };
 	double im{ 0.0 }; 
